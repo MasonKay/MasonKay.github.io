@@ -1,0 +1,37 @@
+<body>
+    <h1>Quiz</h1>
+    <label for="question1"> <b>Nom</b><br></label>
+    <input type="text" id="q1ans1">
+  <br>
+  <br>
+    <label for="question2"><b>Quelle est la sortie de cela?</b> <br><br> <i>var nom = prompt("Quel est ton nom?"); <br>
+alert("WOW! " + nom + " est un beau nom!");</i><br><br> </label>
+    <select id="question2">
+        <option value="q2ans1">WOW! (nom inscrie) est un beau nom!         </option>
+        <option value="q2ans2">Erreur</option>
+        <option value="q2ans3">Beau nom!</option>
+    </select> 
+  <br>
+  <b><div id="bon2"> </div> </b>
+  <br>
+  <br>
+      <label for="question3"><b>Vrai ou Faux. En javascript?</b><br><br> </label>
+         <input type="radio" name="question3" id="q3ans1" value="vrai">Vrai   <br>
+         <input type="radio" name="question3" id="q3ans2" value="faux">Faux 
+  <b><div id="bon3"> </div> </b>
+  <br>
+  <br>
+      <label for="question3"><b>Quelle type de code permet à l'utilisateur de declarer une variable?</b></label><br><br>
+        <input type="checkbox" id="q4ans1" name="question4" value="q4ans1">Let<br>
+        <input type="checkbox" id="q4ans2" name="question4" value="q4ans2">Var<br>
+        <input type="checkbox" id="q4ans3" name="question4" value="q4ans3">Caca
+  <br>
+  <b><div id="bon4"> </div> </b>
+  <br>
+  <input type="button" id="btnSoumet" onclick="corrige()" value="Corriger le quiz">
+<br>
+<br>
+<br>
+<b><i><div id="final"> </div></i></b>
+  <script src="JS/Travail2.js"> </script>
+</body>
