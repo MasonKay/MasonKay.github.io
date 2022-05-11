@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mason's Health Foods</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+      body {
+      background-color: blueviolet;
+    }
+    table {
+      margin-right: auto;
+      margin-left: auto;
+      
+    }
+    th {
+      background-color: white;
+      margin-right: auto;
+      margin-left: auto;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    td {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Nom de l'entreprise -->
+  <h1 style="text-align: center"> Mason's Health Foods </h1>
+  <!-- Explication de l'entreprise -->
+  <p style="text-align: center"> Salut! L'entreprise "Mason's Health Foods" est une entreprise qui permet l'achat de fruits fraiche en ligne! Si dessous vous pouvez selectionne quelle type de fruits et le nombre vous voulez acheter! la limite de chaque fruit est 10! Les prix sont declarer a cote de chaque boite qui vous permeteras de declarer le nombre de fruits desirer! Ensuite, le lieu dans laquelle vous choisirez, soit le Quebec ou l'Ontarion, declaras les taxes provinciales dasn laquelle vous habiter. Ensuite, la maniere de livraison est expliquer a cote des option possible, soit Premium ou Normale. Fait attention, il faut selectionnez au moins 1 de chaque question possible pour etre capable de payez!</p>
+  <table>
+    <thead>
+      <h4 id="Fruits" style="font-size:24px; text-align:center;"> Choix de fruits </h4>
+      <!-- Image de banane -->
+      <th>
+        <p> </p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Kst_Fga1wDVYXUFODbmo6haCCbhj_up42w&usqp=CAU"
+          width="203" id="bananaIMG"></img>
+      </th>
+      <!-- Image de fraise -->
+      <th>
+        <img src="https://m.media-amazon.com/images/I/61uMAe48WML._AC_SL1349_.jpg" width="120" id="strawIMG"></img>
+      </th>
+      <!-- Image de kiwi -->
+      <th>
+        <img src="https://img.freepik.com/free-vector/illustration-colorful-kiwi-cartoon-isolated_126520-603.jpg" width="203" id="kiwiIMG"></img>
+      </th>
+      <!-- Image de framboise -->
+      <th>
+        <img src="https://t3.ftcdn.net/jpg/03/13/88/02/360_F_313880297_d6KcwRdy8nt2HRKX1tKjC9Om9XJw7seb.jpg" width="203" id=rasIMG"> </img>
+      </th>
+      <!-- Image de raisin -->
+      <th>
+        <img src="https://t4.ftcdn.net/jpg/02/75/40/65/360_F_275406526_tfzkvxTjoeIpxID7JtSs6uaSa3WyAGut.jpg" width="203" id="grapeIMG"> </img>
+      </th>
+      </tr>
+    </thead>
+    <!-- Nombre de fruits selectionne -->
+    <tr>
+    <!-- Banane -->
+      <td> <input style="text-align:center" type="number" 
+ id="banana" name="fruits" min="0" max="10" value="0"> 1,61$ </input> </td>
+    <!-- Fraises -->
+      <td> <input style="text-align:center" type="number" id="straw" name="fruits" min="0" max="10" value="0" > 2,51$ </input> </td>
+    <!-- Kiwi -->
+      <td> <input style="text-align:center" type="number" id="kiwi" 
+ name="fruits" min="0" max="10" value="0"> 2,18$ </input> </td>
+    <!-- Framboise -->
+      <td> <input style="text-align:center" type="number" id="ras" 
+ name="fruits" min="0" max="10" value="0"> 6,88$ </input> </td>
+    <!-- Raisin -->
+      <td> <input style="text-align:center" type="number" id="grape"
+ name="fruits" min="0" max="10" value="0"> 1,28$ </input> </td>
+    </tr>
+    </tbody>
+  </table> 
+  <br>
+  <br>
+  <!-- Fin de table -->
+  <!-- Demande pour lieu de l'utilisateur -->
+  <label for="whereLocation"><b>Quel est votre lieu de residence? </b> </label>
+  <br>
+  <!-- Quebec -->
+  <input type="radio" name="where" id="quebec" value="Quebec"> Quebec </input>
+  <br>
+  <!-- Ontario -->
+  <input type="radio" name="where" id="ontario" value="Ontario"> Ontario </input>
+  <br>
+  <br> 
+  <!-- Indique erreur si le lieu n'est pas selectionne -->
+  <div id="erreurLieu"></div>
+  <br>
+  <!-- Demande de type de livraison -->
+  <label for="delivery"><b> Quelle type de livraison voulez vous utiliser? </b> </label>
+  <!-- Livraison premium -->
+  <br>
+  <input type="radio" name="delivery" id="premium" value="premium"> Premium (40$ avec un temps de livraison entre 1-6 jours!) </input>
+  <!-- Livraison normale -->
+  <br>
+  <input type="radio" name="delivery" id="normal" value="normal"> Normal (15$ mais livrer apres 7+ jours!) </input>
+  <br>
+  <br>
+  <div id="erreurLivraison"></div>
+  <br>
+  <!-- Demande de maniere de payer -->
+  <label for="question2"><b>De quelle maniere voulez vous payez?</b></label>
+  <br>
+  <!-- Les option de monnais possible -->
+    <select id="argent">
+      <option value="20">20$</option>
+      <option value="50">50$</option>
+      <option value="100">100$</option>
+      <option value="250">250$</option>
+      <option value="500">500$</option>
+    </select>
+  <br>
+  <br>
+  <div id="erreurFonds"> </div>
+  <br>
+  <!-- Acheter les fruits -->
+  <input type="button" id="buy" onclick="recu()" value="Achetez les fruits"> </input>
+  <br>
+  <br>
+  <div id="totalCost"> </div>
+  <script src="JS/magasinDeFruits.js"></script>
+  <!-- Indique les billets de retour -->
+  <br>
+  <div id="billet100">Billet de 100$ =</div>
+  <div id="billet50">Billet de 50$ =</div>
+  <div id="billet20">Billet de 20$ =</div>
+  <div id="billet10">Billet de 10$ =</div>
+  <div id="billet5">Billet de 5$ =</div>
+  <div id="billet1">Billet de 1$ =</div>
+  
+  
+</body>
+
+</html>
